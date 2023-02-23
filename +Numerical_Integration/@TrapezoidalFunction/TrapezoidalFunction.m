@@ -20,14 +20,12 @@ classdef TrapezoidalFunction < Numerical_Integration.QuadraticFunction
             % output = symsum(func, a, b, n);
             
             output = 0;
-            xi = points(1);
-            xj = points(2);
 
-            for i=2:n-1
+            for i=1:length(points)-1
+                xi = points(i);
+                xj = points(i + 1);
                 step = (xj - xi);
                 output = output + 0.5 * (func(xi) + func(xj)) * step;
-                xi = points(i);
-                xj = points(i+1);
             end
         end
     end
