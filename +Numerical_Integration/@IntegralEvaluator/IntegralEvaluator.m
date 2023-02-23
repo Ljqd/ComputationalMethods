@@ -1,4 +1,4 @@
-classdef IntegralEvaluator
+classdef IntegralEvaluator < handle
     %INTEGRALEVALUATOR Summary of this class goes here
     %   Detailed explanation goes here
     
