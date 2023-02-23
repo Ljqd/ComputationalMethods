@@ -23,4 +23,10 @@ classdef IntegralEvaluator
             obj.quadraticFunction = newQuadraticFunction;
         end
     end
+
+    methods (Static)
+        function value = compute_with(grid)
+            value = grid;
+        end
+    end
 end
