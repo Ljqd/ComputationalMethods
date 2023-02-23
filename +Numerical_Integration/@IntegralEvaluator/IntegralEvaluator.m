@@ -3,7 +3,7 @@ classdef IntegralEvaluator
     %   Detailed explanation goes here
     
     properties (SetAccess = private)
-        quadraticFunction QuadraticFunction2D;
+        quadraticFunction;
     end
     
     methods
