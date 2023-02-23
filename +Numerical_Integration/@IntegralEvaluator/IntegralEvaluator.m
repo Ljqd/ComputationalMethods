@@ -12,11 +12,17 @@ classdef IntegralEvaluator
             %   Detailed explanation goes here
             obj.quadraticFunction = quadraticFunction;
         end
-        
-        function value = compute(grid)
+
+        function value = evaluate_uniform(obj, func, a, b, n)
             %METHOD1 Summary of this method goes here
             %   Detailed explanation goes here
-            value = grid;
+            value = obj.quadraticFunction.evaluate_uniform(func, a, b, n);
+        end
+        
+        function value = evaluate_custom(obj, func, points)
+            %METHOD1 Summary of this method goes here
+            %   Detailed explanation goes here
+            value = obj.quadraticFunction.evaluate_custom(func, points);
         end
 
         function obj = setQuadraticFunction(obj, newQuadraticFunction)

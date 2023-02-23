@@ -8,8 +8,8 @@ classdef (Abstract = true) QuadraticFunction
     %   variations of quadratic formulas
 
     methods(Abstract = true)
-        output = evaluate_uniform(func, a, b, n)
-        output = evaluate_custom(func, points)
+        output = evaluate_uniform(obj, func, a, b, n)
+        output = evaluate_custom(obj, func, points)
     end
 end
 
