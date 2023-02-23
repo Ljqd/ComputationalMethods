@@ -1,4 +1,4 @@
-classdef TrapezoidalFunction < QuadraticFunction2D
+classdef TrapezoidalFunction < Numerical_Integration.QuadraticFunction
     %TRAPEZOIDALFUNCTION Summary of this class goes here
     %   Detailed explanation goes here    
     methods        
@@ -16,7 +16,7 @@ classdef TrapezoidalFunction < QuadraticFunction2D
             end
         end
 
-        function evaluate_custom(func, points)
+        function output = evaluate_custom(func, points)
             % output = symsum(func, a, b, n);
             
             output = 0;
