@@ -1,0 +1,46 @@
+function result = chebyshev(func, a, b, n)
+    result = 0;
+
+    if n < 1 || n > 6
+        error("chebyshev: n < 1 or n > 6");
+    end
+
+    if a > b
+        error("chebyshev: a > b");
+    end
+
+    % set weights and nodes
+    nodes = zeros(1, n);
+    weights = 2 ./ n; 
+    switch n 
+        case 1 
+        case 2 
+            X(2) = 0.5773502691; X(1) = - X(2); 
+        case 3 
+            X(3) = 0.7071067812; X(1) = - X(3); 
+        case 4 
+            X(4) = 0.7946544723; X(1) = - X(4); 
+            X(3) = 0.1875924741; X(2) = - X(3); 
+        case 5 
+            X(5) = 0.8324974870; X(1) = - X(5); 
+            X(4) = 0.3745414096; X(2) = - X(4); 
+        case 6 
+            X(6) = 0.8662468181; X(1) = - X(6); 
+            X(5) = 0.4225186538; X(2) = - X(5); 
+            X(4) = 0.2666354015; X(3) = - X(4);
+    end 
+
+    % transform if [a, b] != [-1, 1]
+    if a ~= -1 || b ~= 1
+        ab = 0.5 .* (a + b); % .* - element-wise multiplication
+        ba = 0.5 .* (b - a); 
+        
+        nodes = ab + ba .* nodes;
+        weights = ba .* weights;
+    end
+
+    % compute, finally
+    for i=1:n
+        result = result + weights(i) * func(nodes(i));
+    end
+end
