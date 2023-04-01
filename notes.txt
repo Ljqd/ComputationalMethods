@@ -1,2 +1,0 @@
-# lab 1 - numerical integration
-    - sources: Numerical methods - Kalitlin, p85
