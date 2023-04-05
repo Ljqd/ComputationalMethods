@@ -14,7 +14,7 @@ function result = markovCalculator(func, a, b, n)
     weights = ones(1,  n);
     switch n
         case 3 
-            C = [1, 4, 1] ./ 3; 
+            weights = [1, 4, 1] ./ 3; 
         case 4 
             nodes(3) = 1./5; nodes(2) = - nodes(3); weights = [1, 5, 5, 1] ./ 6; 
         case 5 
