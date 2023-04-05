@@ -1,4 +1,4 @@
-function result = markov(func, a, b, n)
+function result = markovCalculator(func, a, b, n)
     result = 0;
 
     if n < 2 || n > 6

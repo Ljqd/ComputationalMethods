@@ -1,4 +1,4 @@
-function result = gaussChristoffel(func, a, b, n)
+function result = gaussChristoffelCalculator(func, a, b, n)
     result = 0;
 
     if n < 1 || n > 6

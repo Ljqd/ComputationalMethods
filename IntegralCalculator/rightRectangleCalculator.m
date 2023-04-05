@@ -1,4 +1,4 @@
-function result = rightRectangle(func, a, b, n)
+function result = rightRectangleCalculator(func, a, b, n)
 
     if a > b
         error("centerRectangle: a > b");

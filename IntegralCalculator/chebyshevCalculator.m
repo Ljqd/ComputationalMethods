@@ -1,4 +1,4 @@
-function result = chebyshev(func, a, b, n)
+function result = chebyshevCalculator(func, a, b, n)
     result = 0;
 
     if n < 1 || n > 6

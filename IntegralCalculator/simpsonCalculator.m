@@ -1,4 +1,4 @@
-function result = simpson(func, a, b, n)
+function result = simpsonCalculator(func, a, b, n)
 
     if a > b
         error("centerRectangle: a > b");

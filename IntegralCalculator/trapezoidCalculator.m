@@ -1,4 +1,4 @@
-function result = trapezoid(func, a, b, n)
+function result = trapezoidCalculator(func, a, b, n)
 
     if a > b
         error("centerRectangle: a > b");
