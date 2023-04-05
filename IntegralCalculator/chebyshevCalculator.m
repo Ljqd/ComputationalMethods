@@ -41,6 +41,6 @@ function result = chebyshevCalculator(func, a, b, n)
 
     % compute, finally
     for i=1:n
-        result = result + weights(i) * func(nodes(i));
+        result = result + weights * func(nodes(i));
     end
 end
