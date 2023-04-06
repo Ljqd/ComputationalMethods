@@ -1,4 +1,4 @@
-function [X, Y] = collocationSolverFredholm2(lambda, core, a, b, rightFunc, n, quadFormula)    
+function [X, Y] = collocationSolverFredholm2(lambda, core, a, b, rightFunc, n)    
     % u(x) - lambda \int_a^b K(x, t) u(t) dt = f(x)
 
     % TO DO:
@@ -14,13 +14,14 @@ function [X, Y] = collocationSolverFredholm2(lambda, core, a, b, rightFunc, n, q
         collocationGrid(i) = (X(i) + X(i + 1)) / 2;
     end
     collocationGrid(end) = X(end);
+    step = X(2) - X(1);
 
     %
     A = zeros(n, n);
     F = zeros(n, 1);
     for i=1:n
         for j=1:n
-            A(i, j) = -lambda * collocationGrid(j) * core(collocationGrid(i), collocationGrid(j));
+            A(i, j) = -lambda * step * core(collocationGrid(i), collocationGrid(j));
         end
         % kronecker
         A(i, i) = 1 + A(i, i);
