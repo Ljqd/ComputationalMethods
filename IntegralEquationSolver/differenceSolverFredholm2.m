@@ -1,4 +1,4 @@
-function [X, Y] = collocationSolverFredholm2(lambda, core, a, b, rightFunc, n, quadFormula)    
+function [X, Y] = differenceSolverFredholm2(lambda, core, a, b, rightFunc, n, quadFormula)
     % u(x) - lambda \int_a^b K(x, t) u(t) dt = f(x)
 
     % TO DO:
