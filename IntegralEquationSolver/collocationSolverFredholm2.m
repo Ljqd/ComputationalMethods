@@ -7,18 +7,24 @@ function [X, Y] = collocationSolverFredholm2(lambda, core, a, b, rightFunc, n, q
 
     % create grid
     X = linspace(a, b, n);
-    weights = quadFormula(a, b, n);
+    n = length(X);
+
+    collocationGrid = zeros(1, n);
+    for i=1:n - 1
+        collocationGrid(i) = (X(i) + X(i + 1)) / 2;
+    end
+    collocationGrid(end) = X(end);
 
     %
-    A = zeros(length(X), length(X));
-    F = zeros(length(X), 1);
-    for i=1:length(X)
-        for j=1:length(X)
-            A(i, j) = -lambda * weights(j) * core(X(i), X(j));
+    A = zeros(n, n);
+    F = zeros(n, 1);
+    for i=1:n
+        for j=1:n
+            A(i, j) = -lambda * collocationGrid(j) * core(collocationGrid(i), collocationGrid(j));
         end
         % kronecker
         A(i, i) = 1 + A(i, i);
-        F(i, 1) = rightFunc(X(i));
+        F(i, 1) = rightFunc(collocationGrid(i));
     end
 
     % solve SLR
