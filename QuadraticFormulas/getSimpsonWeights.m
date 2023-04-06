@@ -19,6 +19,6 @@ function weights = getSimpsonWeights(a, b, n)
 
     for i=2:2:n-1
         weights(i) = weights(i) * 2;
-        weights(i + 1) = weights(i) * 4;
+        weights(i + 1) = weights(i + 1) * 4;
     end
 end
