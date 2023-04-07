@@ -72,15 +72,3 @@ function [X, Y] = eulerSolverRight(dfunc, x0, u0, xn, n)
         Y(i) = y0;
     end
 end
-
-function y0 = newton(f, y0)
-    eps = 10^(-9);
-
-    depth = 100; k = 0;
-    while f(y0) ~= 0 && k < depth 
-        df = (f(y0 + eps) - f(y0)) / eps;
-
-        y0 = y0 - f(y0) / df;
-        k = k + 1;
-    end
-end
